@@ -1,0 +1,13 @@
+#!/bin/sh
+SERVICE='omxplayer'
+while true
+do
+if ps ax | grep -v grep | grep $SERVICE > /dev/null
+then
+echo "bethelrunning"
+sleep 5
+else
+omxplayer http://192.168.50.201:8000/bethel.ogg
+sleep 10
+fi
+done
